@@ -10,10 +10,14 @@ import com.example.uni.entities.Teacher;
 import com.example.uni.repository.CourseJdbcRepository;
 import com.example.uni.repository.StudentJdbcRepository;
 import com.example.uni.repository.TeacherJdbcRepository;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.ComboBoxListCell;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -61,6 +65,9 @@ public class TeacherView {
     Label course;
 
     @FXML
+    ListView<Student> listView;
+
+    @FXML
     TextField courseName;
 
     public void loginTeacher() throws IOException {
@@ -95,6 +102,8 @@ public class TeacherView {
 
         try {
             List<Student> students = registrationSystem.retrieveStudentsEnrolledForACourse(courseTitle);
+            ObservableList<Student> observableList = FXCollections.observableList(students);
+            listView.setItems(observableList);
         } catch (SQLException e) {
             e.printStackTrace();
         }
