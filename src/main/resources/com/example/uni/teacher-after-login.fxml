@@ -13,10 +13,14 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="notFoundText"/>
+    <Label fx:id="message" text="What would you like to do?"/>
 
-    <Label fx:id="message" text="Enter your ID"/>
-    <TextField fx:id ="idTeacher"/>
-    <Button fx:id ="teacherLogIn" text="Log In" onAction="#loginTeacher" />
+    <Label fx:id="course" text="Choose course"/>
+    <TextField fx:id ="courseName"/>
 
+    <Button fx:id = "showStudents" text="Show students enrolled on a course" onAction="#showEnrolledStudents"/>
+
+    <Label fx:id="message2"/>
+
+    <Button fx:id = "refresh" text="Refresh" onAction="#refreshPage"/>
 </VBox>

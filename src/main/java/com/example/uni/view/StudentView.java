@@ -5,6 +5,7 @@ import com.example.uni.controller.RegistrationSystem;
 import com.example.uni.controller.StudentController;
 import com.example.uni.controller.TeacherController;
 import com.example.uni.entities.Student;
+import com.example.uni.exceptions.NonExistingDataException;
 import com.example.uni.repository.CourseJdbcRepository;
 import com.example.uni.repository.StudentJdbcRepository;
 import com.example.uni.repository.TeacherJdbcRepository;
@@ -19,7 +20,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class StudentView {
-    Student student;
+    private static Student student;
 
     public RegistrationSystem initializeRegistrationSystem() {
         CourseJdbcRepository courseRepository = new CourseJdbcRepository();
@@ -41,6 +42,9 @@ public class StudentView {
     Label message;
 
     @FXML
+    Label message2;
+
+    @FXML
     Label notFoundText;
 
     @FXML
@@ -51,6 +55,15 @@ public class StudentView {
 
     @FXML
     TextField idStudent;
+
+    @FXML
+    Label course;
+
+    @FXML
+    TextField courseName;
+
+    @FXML
+    Button register;
 
     public void loginStudent() throws IOException {
         int id = Integer.parseInt(idStudent.getText());
@@ -65,13 +78,34 @@ public class StudentView {
             return;
         }
 
-        idStudent.setVisible(false);
+        HelloController main = new HelloController();
+        /*idStudent.setVisible(false);
         studentLogIn.setVisible(false);
-        message.setText("What would you lie to do?");
-        totalCredits.setVisible(true);
+        message.setText("What would you like to do?");
+        totalCredits.setVisible(true);*/
+        main.changeSceneStudent("student-after-login.fxml");
     }
 
     public void showTotalCredits() {
-        credits.setText(String.valueOf(student.getTotalCredits()));
+        credits.setText(String.format("You have %s credits", String.valueOf(student.getTotalCredits())));
+    }
+
+    public void register() {
+        String courseTitle = courseName.getText();
+        RegistrationSystem registrationSystem = initializeRegistrationSystem();
+        boolean registered = false;
+        try {
+            registered = registrationSystem.register(courseTitle, student.getStudentID());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (NonExistingDataException e) {
+            e.printStackTrace();
+        }
+        if (registered) {
+            message2.setText("Student registered");
+        }
+        else
+            message2.setText("Registration failed!");
+
     }
 }

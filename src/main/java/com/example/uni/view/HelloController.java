@@ -4,6 +4,7 @@ import com.example.uni.HelloApplication;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
@@ -13,6 +14,8 @@ import java.io.IOException;
 
 public class HelloController {
 
+    private static Stage stage1;
+    private static Stage stage2;
 
     @FXML
     Button teacherLogIn;
@@ -36,11 +39,21 @@ public class HelloController {
 //        }
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("student-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 500);
-        Stage stage = new Stage();
-        stage.setTitle("Hello Student!");
-        stage.setScene(scene);
-        stage.show();
+        stage1 = new Stage();
+        stage1.setTitle("Hello Student!");
+        stage1.setScene(scene);
+        stage1.show();
 
+    }
+
+    public void changeSceneStudent(String fxml) throws IOException {
+        Parent pane = FXMLLoader.load(HelloApplication.class.getResource(fxml));
+        stage1.getScene().setRoot(pane);
+    }
+
+    public void changeSceneTeacher(String fxml) throws IOException {
+        Parent pane = FXMLLoader.load(HelloApplication.class.getResource(fxml));
+        stage2.getScene().setRoot(pane);
     }
 
     public void loginTeacher() throws IOException {
@@ -58,10 +71,10 @@ public class HelloController {
 //        }
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("teacher-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 500);
-        Stage stage = new Stage();
-        stage.setTitle("Hello Teacher!");
-        stage.setScene(scene);
-        stage.show();
+        stage2 = new Stage();
+        stage2.setTitle("Hello Teacher!");
+        stage2.setScene(scene);
+        stage2.show();
 
 
 

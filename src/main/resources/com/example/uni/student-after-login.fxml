@@ -13,10 +13,15 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="notFoundText"/>
+    <Label fx:id="message" text="What would you like to do?"/>
 
-    <Label fx:id="message" text="Enter your ID"/>
-    <TextField fx:id ="idStudent"/>
-    <Button fx:id ="studentLogIn" text="Log In" onAction="#loginStudent" />
+    <Button fx:id = "totalCredits" text="Show credits" onAction="#showTotalCredits"/>
 
+    <Label fx:id="credits"/>
+
+    <Label fx:id="course" text="Choose course"/>
+    <TextField fx:id ="courseName"/>
+
+    <Button fx:id = "register" text="Register for course" onAction="#register"/>
+    <Label fx:id="message2"/>
 </VBox>
