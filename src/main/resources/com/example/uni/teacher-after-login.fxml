@@ -22,5 +22,6 @@
 
     <Label fx:id="message2" />
 
-    <Button fx:id="refresh" onAction="#refreshPage" text="Refresh" />
+    <Button fx:id="refresh" onAction="#refreshPage" text="Refresh" visible="false"/>
+
 </VBox>

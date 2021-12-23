@@ -20,23 +20,10 @@ public class HelloController {
     @FXML
     Button teacherLogIn;
 
-
     @FXML
     Button studentLogIn;
 
     public void loginStudent() throws IOException {
-//        int id = Integer.parseInt(idStudent.getText());
-//        RegistrationSystem registrationSystem = initializeRegistrationSystem();
-//        Student student = null;
-//        try {
-//            student = registrationSystem.getStudentController().findByID(id);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        if (student == null) {
-//            notFoundText.setText("Student not found");
-//            return;
-//        }
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("student-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 500);
         stage1 = new Stage();
@@ -57,27 +44,11 @@ public class HelloController {
     }
 
     public void loginTeacher() throws IOException {
-//        int id = Integer.parseInt(idTeacher.getText());
-//        RegistrationSystem registrationSystem = initializeRegistrationSystem();
-//        Teacher teacher = null;
-//        try {
-//            teacher = registrationSystem.getTeacherController().findByID(id);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        if (teacher == null) {
-//            notFoundText.setText("Teacher not found");
-//            return;
-//        }
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("teacher-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 500);
         stage2 = new Stage();
         stage2.setTitle("Hello Teacher!");
         stage2.setScene(scene);
         stage2.show();
-
-
-
-
     }
 }

@@ -18,19 +18,13 @@
       </image>
    </ImageView>
 
-    <Label fx:id="notFoundText" />
-<!--    <Button text="Hello!" onAction="#onHelloButtonClick"/>-->
 
     <Label text="Choose how to register" textAlignment="CENTER" underline="true">
       <font>
          <Font name="Arial" size="12.0" />
       </font></Label>
 
-<!--    <Label text="Student" />-->
-<!--    <TextField fx:id ="idStudent"/>-->
     <Button fx:id="studentLogIn" onAction="#loginStudent" text="Student" />
 
-<!--    <Label text="Teacher" />-->
-<!--    <TextField fx:id = "idTeacher"  />-->
     <Button fx:id="teacherLogIn" onAction="#loginTeacher" text="Teacher" />
 </VBox>

@@ -79,15 +79,11 @@ public class StudentView {
         }
 
         HelloController main = new HelloController();
-        /*idStudent.setVisible(false);
-        studentLogIn.setVisible(false);
-        message.setText("What would you like to do?");
-        totalCredits.setVisible(true);*/
         main.changeSceneStudent("student-after-login.fxml");
     }
 
     public void showTotalCredits() {
-        credits.setText(String.format("You have %s credits", String.valueOf(student.getTotalCredits())));
+        credits.setText(String.format("You have %s credits", student.getTotalCredits()));
     }
 
     public void register() {
@@ -96,9 +92,7 @@ public class StudentView {
         boolean registered = false;
         try {
             registered = registrationSystem.register(courseTitle, student.getStudentID());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (NonExistingDataException e) {
+        } catch (SQLException | NonExistingDataException e) {
             e.printStackTrace();
         }
         if (registered) {
@@ -106,6 +100,5 @@ public class StudentView {
         }
         else
             message2.setText("Registration failed!");
-
     }
 }

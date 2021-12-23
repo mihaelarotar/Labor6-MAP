@@ -17,7 +17,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.ComboBoxListCell;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -88,6 +87,7 @@ public class TeacherView {
     }
 
     public void showEnrolledStudents() {
+        message2.setVisible(false);
         String courseTitle = courseName.getText();
         RegistrationSystem registrationSystem = initializeRegistrationSystem();
         Course foundCourse = teacher.getCourses().stream()
@@ -97,6 +97,7 @@ public class TeacherView {
 
         if (foundCourse == null) {
             message2.setText("This is not your course!");
+            message2.setVisible(true);
             return;
         }
 
@@ -104,12 +105,15 @@ public class TeacherView {
             List<Student> students = registrationSystem.retrieveStudentsEnrolledForACourse(courseTitle);
             ObservableList<Student> observableList = FXCollections.observableList(students);
             listView.setItems(observableList);
+            refresh.setVisible(true);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public void refreshPage() {
-
+        showEnrolledStudents();
+        message2.setText("Page was refreshed");
+        message2.setVisible(true);
     }
 }
