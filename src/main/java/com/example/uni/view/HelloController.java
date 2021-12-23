@@ -23,6 +23,10 @@ public class HelloController {
     @FXML
     Button studentLogIn;
 
+    /**
+     * opens a new window for student login
+     * @throws IOException if an I/O exception has occurred
+     */
     public void loginStudent() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("student-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 500);
@@ -33,16 +37,30 @@ public class HelloController {
 
     }
 
+    /**
+     * changes scene on student login window
+     * @param fxml the name of the fxml file to be used as the new scene
+     * @throws IOException if an I/O exception has occurred
+     */
     public void changeSceneStudent(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(HelloApplication.class.getResource(fxml));
         stage1.getScene().setRoot(pane);
     }
 
+    /**
+     * changes scene on teacher login window
+     * @param fxml the name of the fxml file to be used as the new scene
+     * @throws IOException if an I/O exception has occurred
+     */
     public void changeSceneTeacher(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(HelloApplication.class.getResource(fxml));
         stage2.getScene().setRoot(pane);
     }
 
+    /**
+     * opens a new window for teacher login
+     * @throws IOException if an I/O exception has occurred
+     */
     public void loginTeacher() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("teacher-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 500);

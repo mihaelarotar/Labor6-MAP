@@ -69,6 +69,10 @@ public class TeacherView {
     @FXML
     TextField courseName;
 
+    /**
+     * log in for teachers
+     * @throws IOException if an I/O exception has occurred
+     */
     public void loginTeacher() throws IOException {
         int id = Integer.parseInt(idTeacher.getText());
         RegistrationSystem registrationSystem = initializeRegistrationSystem();
@@ -86,6 +90,9 @@ public class TeacherView {
         main.changeSceneTeacher("teacher-after-login.fxml");
     }
 
+    /**
+     * shows all students enrolled to a certain course of the logged in teacher
+     */
     public void showEnrolledStudents() {
         message2.setVisible(false);
         String courseTitle = courseName.getText();
@@ -111,6 +118,9 @@ public class TeacherView {
         }
     }
 
+    /**
+     * refreshes page to show the updated list of enrolled students
+     */
     public void refreshPage() {
         showEnrolledStudents();
         message2.setText("Page was refreshed");

@@ -65,6 +65,10 @@ public class StudentView {
     @FXML
     Button register;
 
+    /**
+     * log in for students
+     * @throws IOException if an I/O exception has occurred
+     */
     public void loginStudent() throws IOException {
         int id = Integer.parseInt(idStudent.getText());
         RegistrationSystem registrationSystem = initializeRegistrationSystem();
@@ -82,10 +86,16 @@ public class StudentView {
         main.changeSceneStudent("student-after-login.fxml");
     }
 
+    /**
+     * shows the total number of credits for the logged in student
+     */
     public void showTotalCredits() {
         credits.setText(String.format("You have %s credits", student.getTotalCredits()));
     }
 
+    /**
+     * registers the logged in student to a course
+     */
     public void register() {
         String courseTitle = courseName.getText();
         RegistrationSystem registrationSystem = initializeRegistrationSystem();
