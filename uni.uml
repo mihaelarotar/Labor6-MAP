@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/rotar/IdeaProjects/demo/src/main/java/com/example/uni</OriginalElement>
+  <nodes>
+    <node x="986.0" y="731.0">com.example.uni.entities.Student</node>
+    <node x="232.5" y="1312.0">com.example.uni.repository.RowMapper</node>
+    <node x="430.0" y="1418.0">com.example.uni.repository.StudentRowMapper</node>
+    <node x="874.0" y="1312.0">com.example.uni.exceptions.NonExistingDataException</node>
+    <node x="218.0" y="1418.0">com.example.uni.repository.CourseRowMapper</node>
+    <node x="1157.0" y="240.0">com.example.uni.controller.CourseController</node>
+    <node x="402.0" y="990.0">com.example.uni.entities.Course</node>
+    <node x="218.0" y="346.0">com.example.uni.repository.CourseJdbcRepository</node>
+    <node x="708.0" y="731.0">com.example.uni.entities.Teacher</node>
+    <node x="237.0" y="0.0">com.example.uni.repository.ICrudRepository</node>
+    <node x="458.0" y="357.0">com.example.uni.repository.StudentJdbcRepository</node>
+    <node x="974.0" y="273.0">com.example.uni.controller.TeacherController</node>
+    <node x="1137.0" y="1312.0">com.example.uni.exceptions.ExceededValueException</node>
+    <node x="193.0" y="173.0">com.example.uni.repository.JdbcRepository</node>
+    <node x="0.0" y="1418.0">com.example.uni.repository.TeacherRowMapper</node>
+    <node x="737.0" y="990.0">com.example.uni.view.HelloController</node>
+    <node x="0.0" y="580.0">com.example.uni.view.TeacherView</node>
+    <node x="703.0" y="240.0">com.example.uni.controller.StudentController</node>
+    <node x="0.0" y="990.0">com.example.uni.controller.RegistrationSystem</node>
+    <node x="354.0" y="580.0">com.example.uni.view.StudentView</node>
+    <node x="672.0" y="1312.0">com.example.uni.HelloApplication</node>
+    <node x="948.5" y="0.0">com.example.uni.controller.Controller</node>
+    <node x="920.5" y="580.0">com.example.uni.entities.Person</node>
+    <node x="0.0" y="357.0">com.example.uni.repository.TeacherJdbcRepository</node>
+    <node x="1389.0" y="1312.0">com.example.uni.exceptions.InvalidDataException</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.example.uni.controller.CourseController" target="com.example.uni.controller.Controller" relationship="GENERALIZATION">
+      <point x="0.0" y="-72.0" />
+      <point x="1266.0" y="215.0" />
+      <point x="1055.5" y="215.0" />
+      <point x="0.0" y="95.0" />
+    </edge>
+    <edge source="com.example.uni.repository.StudentRowMapper" target="com.example.uni.repository.RowMapper" relationship="REALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="528.5" y="1393.0" />
+      <point x="314.0" y="1393.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="com.example.uni.repository.TeacherRowMapper" target="com.example.uni.repository.RowMapper" relationship="REALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="99.0" y="1393.0" />
+      <point x="314.0" y="1393.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="com.example.uni.repository.StudentJdbcRepository" target="com.example.uni.repository.JdbcRepository" relationship="GENERALIZATION">
+      <point x="0.0" y="-83.5" />
+      <point x="558.0" y="321.0" />
+      <point x="328.0" y="321.0" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="com.example.uni.repository.CourseRowMapper" target="com.example.uni.repository.RowMapper" relationship="REALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="com.example.uni.controller.TeacherController" target="com.example.uni.controller.Controller" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="0.0" y="95.0" />
+    </edge>
+    <edge source="com.example.uni.entities.Teacher" target="com.example.uni.entities.Person" relationship="GENERALIZATION">
+      <point x="0.0" y="-94.5" />
+      <point x="837.0" y="706.0" />
+      <point x="988.5" y="706.0" />
+      <point x="0.0" y="50.5" />
+    </edge>
+    <edge source="com.example.uni.controller.StudentController" target="com.example.uni.controller.Controller" relationship="GENERALIZATION">
+      <point x="0.0" y="-72.0" />
+      <point x="828.5" y="215.0" />
+      <point x="1055.5" y="215.0" />
+      <point x="0.0" y="95.0" />
+    </edge>
+    <edge source="com.example.uni.repository.JdbcRepository" target="com.example.uni.repository.ICrudRepository" relationship="REALIZATION">
+      <point x="0.0" y="-61.5" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="com.example.uni.entities.Student" target="com.example.uni.entities.Person" relationship="GENERALIZATION">
+      <point x="0.0" y="-94.5" />
+      <point x="1140.0" y="706.0" />
+      <point x="988.5" y="706.0" />
+      <point x="0.0" y="50.5" />
+    </edge>
+    <edge source="com.example.uni.repository.TeacherJdbcRepository" target="com.example.uni.repository.JdbcRepository" relationship="GENERALIZATION">
+      <point x="0.0" y="-83.5" />
+      <point x="99.0" y="321.0" />
+      <point x="328.0" y="321.0" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="com.example.uni.repository.CourseJdbcRepository" target="com.example.uni.repository.JdbcRepository" relationship="GENERALIZATION">
+      <point x="0.0" y="-94.5" />
+      <point x="0.0" y="61.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.4163989290495316" showDependencies="false" x="557.8799228419866" y="424.9070888924609" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
