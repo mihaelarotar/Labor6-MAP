@@ -1,7 +1,0 @@
-module:com.example.demo
-com.example.uni
-com.example.uni.controller
-com.example.uni.entities
-com.example.uni.exceptions
-com.example.uni.repository
-com.example.uni.view
